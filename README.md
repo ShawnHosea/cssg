@@ -1,2 +1,0 @@
-# cssg
-Begin app
