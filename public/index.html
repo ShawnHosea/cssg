@@ -1,33 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset=utf-8>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hi from Begin!</title>
-  <link rel="stylesheet" href="https://static.begin.app/starter/default.css">
-  <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>CSSG</title>
 </head>
+
 <body>
-  <div class="center-text">
-    <img src="https://static.begin.app/starter/begin-logo.svg" style="max-width: 250px" class="center-text">
-    <div style="margin-bottom: 24px">
-      <h1 style="margin-bottom: 24px" class="center-text">
-        Howdy, Beginner!
-      </h1>
-      <p style="margin-bottom: 8px">
-        Get started by editing this file at:
-      </p>
-      <code>
-        public/index.html
-      </code>
-    </div>
-    <div>
-      <p style="margin-bottom: 8px">
-        View documentation at:
-      </p>
-      <a class="link" href="https://docs.begin.com" target="_blank">https://docs.begin.com</a>
-    </div>
-  </div>
+  <main>
+    <color-scale>
+      <form id="colors-form" action="/colors" method="POST" style="
+          display:flex;
+          flex-direction:column;
+        ">
+        <label for="hue">
+          Hue:
+          <input type="number" name="hue" min="0" max="360" value="260">
+        </label>
+        <label for="saturation">
+          Saturation:
+          <input type="number" name="saturation" min="0" max="100" value="80">
+        </label>
+        <label for="lightness">
+          Lightness:
+          <input type="number" name="lightness" min="0" max="100" value="45">
+        </label>
+        <label for="alpha">
+          Alpha:
+          <input type="number" name="alpha" min="0.0" max="1.0" step="0.1" value="1.0">
+        </label>
+        <label for="steps">
+          Steps:
+          <input type="number" name="steps" min="0" max="25" value="6">
+        </label>
+        <label for="distance">
+          Distance:
+          <input type="number" name="distance" value="10">
+        </label>
+        ​
+        <label for="property">
+          Step property:
+          <label for="hue">
+            Hue
+            <input type="radio" name="step-property" value="hue">
+          </label>
+          <label for="saturation">
+            Saturation
+            <input type="radio" name="step-property" value="saturation">
+          </label>
+          <label for="lightness">
+            Lightness
+            <input type="radio" name="step-property" value="lightness" checked=checked>
+          </label>
+        </label>
+
+        <button>
+          Save
+        </button>
+      </form>
+      <ul id="scale-preview" style="
+          list-style:none;
+          display: flex;
+        ">
+        <li id="preview" style="
+            width:4rem;
+            height:4rem;
+            background-color:rgb(122, 84, 84);
+          ">
+        </li>
+      </ul>
+    </color-scale>
+  </main>
   <script type="module" src="index.js"></script>
 </body>
+
 </html>
